@@ -17,9 +17,10 @@ create table if not exists albums(
 	performer_id integer references performers(id)
 );
 
+ 
 create table if not exists tracks(
 	id serial primary key,
 	name varchar(40) not null,
-	duration time not null,
+	duration integer not null,
 	album_id integer references albums(id)
 );
