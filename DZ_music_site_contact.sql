@@ -34,10 +34,15 @@ create table if not exists tracks(
 	album_id integer not null references albums(id)
 );
 
-create table if not exists collection(
+create table if not exists collections(
 	id serial primary key,
 	name varchar(40) not null,
 	release_year int check(release_year > 0),
 	track_id integer not null references tracks(id)
 );
 
+create table if not exists tracks_collections(
+	id serial primary key,
+	track_id integer not null references tracks(id),
+	collection_id integer not null references collections(id)
+);
