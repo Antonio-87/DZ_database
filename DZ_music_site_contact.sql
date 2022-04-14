@@ -5,8 +5,7 @@ create table if not exists genres(
 
 create table if not exists performers(
 	id serial primary key,
-	name varchar(40) not null,
-	alias varchar(40)
+	name_alias varchar(40) not null,
 );
 
 create table if not exists genres_performers(
@@ -37,8 +36,7 @@ create table if not exists tracks(
 create table if not exists collections(
 	id serial primary key,
 	name varchar(40) not null,
-	release_year int check(release_year > 0),
-	track_id integer not null references tracks(id)
+	release_year int check(release_year > 0)
 );
 
 create table if not exists tracks_collections(
@@ -46,3 +44,7 @@ create table if not exists tracks_collections(
 	track_id integer not null references tracks(id),
 	collection_id integer not null references collections(id)
 );
+
+
+
+
