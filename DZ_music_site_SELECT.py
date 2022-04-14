@@ -43,5 +43,5 @@ WHERE name_alias NOT LIKE '%% %%';
 print(connection.execute(
 """
 SELECT name FROM tracks
-WHERE name  iLIKE '%%my%%';
+WHERE name ILIKE '%%мой%%' or name ILIKE '%%my%%';
 """).fetchall())
