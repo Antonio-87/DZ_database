@@ -44,7 +44,3 @@ create table if not exists tracks_collections(
 	track_id integer not null references tracks(id),
 	collection_id integer not null references collections(id)
 );
-
-
-
-
